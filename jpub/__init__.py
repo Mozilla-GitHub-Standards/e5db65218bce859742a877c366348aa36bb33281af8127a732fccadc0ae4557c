@@ -103,14 +103,14 @@ def main():
         age = now - updated
         old = age.days > 0
 
-        db[job] = {'updated': updated.strftime('%Y-%m-%d %H:%M:%S'),
-                   'job': job,
-                   'build_id': build_id,
-                   'desc': desc,
-                   'link': link,
-                   'ok': ok,
-                   'old': old,
-                   '_updated': updated}
+        db[str(job)] = {'updated': updated.strftime('%Y-%m-%d %H:%M:%S'),
+                        'job': job,
+                        'build_id': build_id,
+                        'desc': desc,
+                        'link': link,
+                        'ok': ok,
+                        'old': old,
+                        '_updated': updated}
 
 
     # now we can generate the dashboard
