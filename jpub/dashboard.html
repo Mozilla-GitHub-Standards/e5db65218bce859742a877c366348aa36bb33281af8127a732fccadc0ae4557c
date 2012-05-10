@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>Latest Build statuses</h1>
+        %for job in jobs:
+        <div>
+          %if job['ok']:
+          <img src="ok.png"></img>
+          %else:
+          <img src="fail.png"></img>
+          %endif
+          <strong>${job['job']}</strong> - ${job['updated']}
+          %if job['old']:
+          <span>Warning: this build is more than one day old!</span>
+          %endif
+        </div>
+        %endfor
+    </body>
+</html>
